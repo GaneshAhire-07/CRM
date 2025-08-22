@@ -4,7 +4,7 @@ import SignUpForm from "./components/SignUpForm";
 import Dashboard from "./pages/dashboard/Dashboard";
 import ClientPage from "./pages/customers/ClientPage";
 import Layout from "./components/Layout";
-
+import StaffPage from "./pages/staff/StaffPage";
 function App() {
   return (
     <div className="App">
@@ -15,6 +15,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/clients" element={<ClientPage />} />
+          <Route path="/staff" element={<StaffPage />} />
         </Route>
       </Routes>
     </div>

@@ -1,0 +1,56 @@
+.card-container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.latest-activity {
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.activity-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.activity-details {
+  font-size: 0.9rem;
+}
+
+.activity-text {
+  margin: 0;
+  color: #555;
+}
+
+.activity-text .task-link {
+  color: #2196f3;
+  cursor: pointer;
+}
+
+.activity-time {
+  margin: 4px 0 0 0;
+  font-size: 0.75rem;
+  color: #999;
+}

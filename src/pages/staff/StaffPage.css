@@ -1,0 +1,25 @@
+.staff-page-content {
+  padding: 1rem;
+  background-color: #f7f9fc;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 समान कॉलम = 25% प्रत्येक */
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.stats-container .dashboard-card {
+  width: 100%; 
+}
+
+.staff-main-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 समान कॉलम = 50% - 50% */
+  gap: 20px;
+}
+
+.staff-main-content > * {
+  grid-column: span 1; /* दोन्ही component 2-2 जागा घेतील */
+}
