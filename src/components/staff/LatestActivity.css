@@ -68,5 +68,26 @@
 }
 
 .task-link:hover {
-  color: #1e40af; /* blue-800 */
+  color: #1e40af;
 }
+.latest-activity {
+  max-height: 450px;
+  overflow-y: auto; 
+  padding-right: 5px; 
+}
+
+.latest-activity::-webkit-scrollbar {
+  width: 6px;
+}
+
+.latest-activity::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+.desc-link,
+.file-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
