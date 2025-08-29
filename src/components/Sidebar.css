@@ -243,3 +243,14 @@ width: 70px;
   text-decoration: none;
   color: inherit;
 }
+.bookmark-list li a {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  font-size: 14px;
+  color: #333;
+}
+.bookmark-icon {
+  font-size: 16px;
+  color: #555;
+}

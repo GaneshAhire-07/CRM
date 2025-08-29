@@ -6,11 +6,18 @@ import { FaRegStar } from "react-icons/fa6";
 import { IoNotificationsOutline, IoClose } from "react-icons/io5";
 import { MdOutlineCalendarToday } from "react-icons/md";
 import { PiChatsCircle } from "react-icons/pi";
-import { SlSettings } from "react-icons/sl";
 import { LuAlarmClock, LuMenu } from "react-icons/lu";
 import { SearchOutlined } from "@ant-design/icons";
 import ChatWindow from "./ChatWindow"; // ChatWindow component import केला आहे
 import { Link } from "react-router-dom";
+import { FaRegFolder } from "react-icons/fa"; // Projects
+import { PiUsersLight } from "react-icons/pi"; // Clients
+import { MdOutlineListAlt } from "react-icons/md"; // Tasks
+import { BiCommentDetail } from "react-icons/bi"; // Project Comments
+import { LuNotebook } from "react-icons/lu"; // Notes
+import { LuPhoneCall } from "react-icons/lu"; // Lead
+import { TbReceipt } from "react-icons/tb"; // Expense
+import { BiMessageDetail } from "react-icons/bi"; // Ticket
 
 const profileDetails = {
   name: "Steven",
@@ -155,19 +162,30 @@ const NavBar = ({ toggleSidebar }) => {
               <div className="dropdown-header"></div>
               <ul className="bookmark-list">
                 <li>
-                  <a href="/projects">Projects</a>
+                  <a href="/projects">
+                    <FaRegFolder className="bookmark-icon" /> Projects
+                  </a>
                 </li>
                 <li>
-                  <a href="/clients">Clients</a>
+                  <a href="/clients">
+                    <PiUsersLight className="bookmark-icon" /> Clients
+                  </a>
                 </li>
                 <li>
-                  <a href="/tasks">Tasks</a>
+                  <a href="/tasks">
+                    <MdOutlineListAlt className="bookmark-icon" /> Tasks
+                  </a>
                 </li>
                 <li>
-                  <a href="/comments">Project Comments</a>
+                  <a href="/comments">
+                    <BiCommentDetail className="bookmark-icon" /> Project
+                    Comments
+                  </a>
                 </li>
                 <li>
-                  <a href="/notes">Notes</a>
+                  <a href="/notes">
+                    <LuNotebook className="bookmark-icon" /> Notes
+                  </a>
                 </li>
               </ul>
             </div>
@@ -545,9 +563,7 @@ const NavBar = ({ toggleSidebar }) => {
                       </button>
                     ))}
                   </div>
-                  <button className="settings-btn">
-                    <SlSettings />
-                  </button>
+
                   <button className="add-btn">
                     <GrAddCircle />
                   </button>
@@ -576,10 +592,6 @@ const NavBar = ({ toggleSidebar }) => {
           <PiChatsCircle />
         </button>
 
-        <button className="icon-btn">
-          <SlSettings />
-        </button>
-
         {/* "Add" dropdown menu */}
         <div className="add-menu-container">
           <button
@@ -590,18 +602,26 @@ const NavBar = ({ toggleSidebar }) => {
           </button>
           {isAddMenuOpen && (
             <div className="add-menu-dropdown">
-              <ul className="add-menu-list">
+              <ul className="bookmark-list">
                 <li>
-                  <a href="/add-task">Task</a>
+                  <a href="/task">
+                    <MdOutlineListAlt className="bookmark-icon" /> Task
+                  </a>
                 </li>
                 <li>
-                  <a href="/add-lead">Lead</a>
+                  <a href="/lead">
+                    <LuPhoneCall className="bookmark-icon" /> Lead
+                  </a>
                 </li>
                 <li>
-                  <a href="/add-expense">Expense</a>
+                  <a href="/expense">
+                    <TbReceipt className="bookmark-icon" /> Expense
+                  </a>
                 </li>
                 <li>
-                  <a href="/add-ticket">Ticket</a>
+                  <a href="/ticket">
+                    <BiMessageDetail className="bookmark-icon" /> Ticket
+                  </a>
                 </li>
               </ul>
             </div>
