@@ -3,23 +3,26 @@
   background-color: #f7f9fc;
 }
 
-.stats-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.stats-container .dashboard-card {
-  width: 100%;
-}
-
 .staff-main-content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); 
   gap: 20px;
 }
 
-.staff-main-content > * {
-  grid-column: span 1;
+.staff-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+.staff-cards-row {
+  display: flex;
+  gap: 20px;
+}
+
+.staff-cards-row .dashboard-card {
+  flex: 1; 
+  margin-left: 0;
+  margin-top: 0;
+  width: auto;
 }

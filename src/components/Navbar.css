@@ -1,3 +1,4 @@
+/* === Navbar Wrapper === */
 .navbar {
   height: 76px;
   background: #fff;
@@ -11,6 +12,7 @@
   z-index: 10;
 }
 
+/* === Left Section === */
 .navbar-left {
   display: flex;
   align-items: center;
@@ -22,37 +24,53 @@
   background: none;
   border: none;
   cursor: pointer;
+  color: #333;
 }
 
+/* === Search Bar === */
 .search-bar {
   display: flex;
   align-items: center;
   background: #f8f8f8;
-  padding: 5px 10px;
+  padding: 5px 12px;
   border-radius: 20px;
 }
 
 .search-bar input {
   border: none;
   outline: none;
-  margin-left: 5px;
+  margin-left: 6px;
   background: transparent;
+  font-size: 14px;
 }
 
+/* === Right Section === */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
   margin-right: 20px;
 }
 
-.navbar-right a {
+.navbar-right a,
+.navbar-right .icon-btn {
   color: rgb(26, 26, 26);
   text-decoration: none;
   font-size: 1.5rem;
-  transition: 0.3s;
+  transition: color 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
+.navbar-right .icon-btn:hover {
+  color: #007bff;
+}
+
+/* === Profile Section === */
 .profile {
   display: flex;
   align-items: center;
@@ -61,4 +79,1596 @@
 
 .profile-img {
   border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+}
+
+/* === Bookmark & Timer Container === */
+.bookmark-container,
+.timer-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.bookmark-dropdown,
+.timer-dropdown {
+  position: absolute;
+  top: 150%;
+  right: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 250px;
+  z-index: 1000;
+  border: 1px solid #e5e5e5;
+  overflow: hidden;
+  text-align: left;
+}
+
+/* === Dropdown Header === */
+.dropdown-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-header h6 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* === Bookmark List === */
+.bookmark-list {
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+}
+
+.bookmark-list li a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #555 !important;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.bookmark-list li a:hover {
+  background-color: #f0f0f0;
+  color: #007bff !important;
+}
+
+/* === Timer Dropdown === */
+.timer-header h6 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.start-timer-btn {
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.start-timer-btn:hover {
+  background-color: #0056b3;
+}
+
+.timer-dropdown .dropdown-content {
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #555;
+  text-align: center;
+}
+
+/* === Reminders Dropdown (NEW) === */
+.reminders-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 400px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.reminders-header {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reminder-icon {
+  font-size: 18px;
+}
+
+.reminders-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.reminders-tabs {
+  display: flex;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #718096;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.tab.active {
+  color: #4299e1;
+  background: white;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #4299e1;
+}
+
+.tab:hover:not(.active) {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.reminders-content {
+  padding: 40px 20px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-state {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.empty-illustration {
+  opacity: 0.8;
+}
+
+.empty-message {
+  color: #718096;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Ensure the timer container has relative positioning for absolute dropdown */
+.timer-container {
+  position: relative;
+}
+/* Add these styles to your existing Navbar.css */
+
+.reminders-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 400px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.reminders-header {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reminder-icon {
+  font-size: 18px;
+}
+
+.reminders-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.reminders-tabs {
+  display: flex;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #718096;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.tab.active {
+  color: #4299e1;
+  background: white;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #4299e1;
+}
+
+.tab:hover:not(.active) {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.reminders-content {
+  padding: 40px 20px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-state {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.empty-illustration {
+  opacity: 0.8;
+}
+
+.empty-message {
+  color: #718096;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Ensure the timer container has relative positioning for absolute dropdown */
+.timer-container {
+  position: relative;
+}
+
+/* Notifications Dropdown Styles */
+.notifications-container {
+  position: relative;
+}
+
+.notifications-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 420px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.notifications-header {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.notification-icon {
+  font-size: 18px;
+}
+
+.notifications-tabs {
+  display: flex;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.notifications-content {
+  max-height: 400px;
+  overflow-y: auto;
+  background: #f8fafc;
+}
+
+.notification-item {
+  display: flex;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background: white;
+  transition: background-color 0.2s;
+  gap: 12px;
+}
+
+.notification-item:hover {
+  background: #f7fafc;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.notification-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.notification-user {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 14px;
+}
+
+.notification-time {
+  color: #a0aec0;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.notification-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.notification-status.unread {
+  background: #4299e1;
+}
+
+.notification-action {
+  color: #718096;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.notification-target {
+  color: #4299e1;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.notification-target.link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.notification-message {
+  color: #4a5568;
+  font-size: 13px;
+  line-height: 1.4;
+  background: #f7fafc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid #e2e8f0;
+}
+
+.notification-status-change {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.status-label {
+  color: #718096;
+  font-size: 13px;
+}
+
+.status-value {
+  color: #38a169;
+  font-size: 13px;
+  font-weight: 500;
+}
+/* Add these styles to your existing Navbar.css */
+
+.reminders-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 400px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.reminders-header {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reminder-icon {
+  font-size: 18px;
+}
+
+.reminders-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.reminders-tabs {
+  display: flex;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #718096;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.tab.active {
+  color: #4299e1;
+  background: white;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #4299e1;
+}
+
+.tab:hover:not(.active) {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.reminders-content {
+  padding: 40px 20px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-state {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.empty-illustration {
+  opacity: 0.8;
+}
+
+.empty-message {
+  color: #718096;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Ensure the timer container has relative positioning for absolute dropdown */
+.timer-container {
+  position: relative;
+}
+
+/* Notifications Dropdown Styles */
+.notifications-container {
+  position: relative;
+}
+
+.notifications-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 420px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.notifications-header {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.notification-icon {
+  font-size: 18px;
+}
+
+.notifications-tabs {
+  display: flex;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.notifications-content {
+  max-height: 400px;
+  overflow-y: auto;
+  background: #f8fafc;
+}
+
+.notification-item {
+  display: flex;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background: white;
+  transition: background-color 0.2s;
+  gap: 12px;
+}
+
+.notification-item:hover {
+  background: #f7fafc;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.notification-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.notification-user {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 14px;
+}
+
+.notification-time {
+  color: #a0aec0;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.notification-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.notification-status.unread {
+  background: #4299e1;
+}
+
+.notification-action {
+  color: #718096;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.notification-target {
+  color: #4299e1;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.notification-target.link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.notification-message {
+  color: #4a5568;
+  font-size: 13px;
+  line-height: 1.4;
+  background: #f7fafc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid #e2e8f0;
+}
+
+.notification-status-change {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.status-label {
+  color: #718096;
+  font-size: 13px;
+}
+
+.status-value {
+  color: #38a169;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Time Tracker Dropdown Styles */
+.time-tracker-container {
+  position: relative;
+}
+
+.time-tracker-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 380px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e2e8f0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.time-tracker-header {
+  padding: 20px 20px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none;
+}
+
+.time-tracker-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.close-btn-simple {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  color: #718096;
+  transition: color 0.2s;
+}
+
+.close-btn-simple:hover {
+  color: #2d3748;
+}
+
+.time-tracker-content {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #718096;
+  font-weight: 500;
+}
+
+.form-select,
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #f8fafc;
+  color: #2d3748;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-select:focus,
+.form-input:focus {
+  outline: none;
+  border-color: #4299e1;
+  background: white;
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.time-inputs {
+  display: flex;
+  gap: 12px;
+}
+
+.time-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.time-input {
+  text-align: center;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-close {
+  padding: 10px 20px;
+  background: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #718096;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-close:hover {
+  background: #f7fafc;
+  color: #2d3748;
+}
+
+.btn-submit {
+  padding: 10px 20px;
+  background: #f56565;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background: #e53e3e;
+}
+/* Add these styles to your existing Navbar.css */
+
+.reminders-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 400px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.reminders-header {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reminder-icon {
+  font-size: 18px;
+}
+
+.reminders-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.reminders-tabs {
+  display: flex;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #718096;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.tab.active {
+  color: #4299e1;
+  background: white;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #4299e1;
+}
+
+.tab:hover:not(.active) {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.reminders-content {
+  padding: 40px 20px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-state {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.empty-illustration {
+  opacity: 0.8;
+}
+
+.empty-message {
+  color: #718096;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Ensure the timer container has relative positioning for absolute dropdown */
+.timer-container {
+  position: relative;
+}
+
+/* Notifications Dropdown Styles */
+.notifications-container {
+  position: relative;
+}
+
+.notifications-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 420px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.notifications-header {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.notification-icon {
+  font-size: 18px;
+}
+
+.notifications-tabs {
+  display: flex;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.notifications-content {
+  max-height: 400px;
+  overflow-y: auto;
+  background: #f8fafc;
+}
+
+.notification-item {
+  display: flex;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background: white;
+  transition: background-color 0.2s;
+  gap: 12px;
+}
+
+.notification-item:hover {
+  background: #f7fafc;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.notification-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.notification-user {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 14px;
+}
+
+.notification-time {
+  color: #a0aec0;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.notification-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.notification-status.unread {
+  background: #4299e1;
+}
+
+.notification-action {
+  color: #718096;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.notification-target {
+  color: #4299e1;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.notification-target.link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.notification-message {
+  color: #4a5568;
+  font-size: 13px;
+  line-height: 1.4;
+  background: #f7fafc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid #e2e8f0;
+}
+
+.notification-status-change {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.status-label {
+  color: #718096;
+  font-size: 13px;
+}
+
+.status-value {
+  color: #38a169;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Time Tracker Dropdown Styles */
+.time-tracker-container {
+  position: relative;
+}
+
+.time-tracker-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 380px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e2e8f0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.time-tracker-header {
+  padding: 20px 20px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none;
+}
+
+.time-tracker-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.close-btn-simple {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  color: #718096;
+  transition: color 0.2s;
+}
+
+.close-btn-simple:hover {
+  color: #2d3748;
+}
+
+.time-tracker-content {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #718096;
+  font-weight: 500;
+}
+
+.form-select,
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #f8fafc;
+  color: #2d3748;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-select:focus,
+.form-input:focus {
+  outline: none;
+  border-color: #4299e1;
+  background: white;
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.time-inputs {
+  display: flex;
+  gap: 12px;
+}
+
+.time-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.time-input {
+  text-align: center;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-close {
+  padding: 10px 20px;
+  background: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #718096;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-close:hover {
+  background: #f7fafc;
+  color: #2d3748;
+}
+
+.btn-submit {
+  padding: 10px 20px;
+  background: #f56565;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background: #e53e3e;
+}
+
+.calendar-container {
+  position: relative;
+}
+
+.calendar-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 900px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e2e8f0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.calendar-header {
+  padding: 20px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #4a5568;
+  transition: all 0.2s;
+}
+
+.nav-btn:hover {
+  background: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+.today-btn {
+  padding: 8px 16px;
+  background: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #4a5568;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.today-btn:hover {
+  background: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+.calendar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  letter-spacing: 0.05em;
+}
+
+.calendar-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.view-buttons {
+  display: flex;
+  background: #f7fafc;
+  border-radius: 6px;
+  padding: 2px;
+  border: 1px solid #e2e8f0;
+}
+
+.view-btn {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #718096;
+  transition: all 0.2s;
+}
+
+.view-btn.active {
+  background: #4299e1;
+  color: white;
+}
+
+.view-btn:not(.active):hover {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.settings-btn,
+.add-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #4a5568;
+  transition: all 0.2s;
+}
+
+.settings-btn:hover,
+.add-btn:hover {
+  background: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+.add-btn {
+  background: #f56565;
+  border-color: #f56565;
+  color: white;
+}
+
+.add-btn:hover {
+  background: #e53e3e;
+  border-color: #e53e3e;
+}
+
+.calendar-grid {
+  padding: 0 20px 20px 20px;
+}
+
+.day-headers {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  margin-bottom: 1px;
+}
+
+.day-header {
+  padding: 12px 8px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #718096;
+  background: #f7fafc;
+  border-radius: 4px 4px 0 0;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: #e2e8f0;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  background: white;
+  padding: 8px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 14px;
+  color: #2d3748;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-height: 80px;
+}
+
+.calendar-day:hover {
+  background: #f7fafc;
+}
+
+.calendar-day.prev-month,
+.calendar-day.next-month {
+  color: #a0aec0;
+  background: #f9fafb;
+}
+
+.calendar-day.today {
+  background: #ebf8ff;
+  color: #2b6cb0;
+  font-weight: 600;
+  position: relative;
+}
+
+.calendar-day.today::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 6px;
+  height: 6px;
+  background: #4299e1;
+  border-radius: 50%;
+}
+.add-menu-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* 2. The dropdown panel that appears on click.
+      Styled to match the '.bookmark-dropdown' for consistency. */
+.add-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 12px); /* Positioned below the icon with a 12px gap */
+  right: 0;
+  width: 220px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e5e5e5;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* 3. The list within the dropdown.
+      Removes default bullet points and padding. */
+.add-menu-list {
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+}
+
+.add-menu-list li a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #555 !important;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.add-menu-list li a:hover {
+  background-color: #f0f0f0;
+  color: #007bff !important;
+}
+.profile-link {
+  text-decoration: none;
+  color: inherit; /* मूळ रंग वापरण्यासाठी */
 }
