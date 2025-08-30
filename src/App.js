@@ -5,7 +5,6 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import ClientPage from "./pages/customers/ClientPage";
 import Layout from "./components/Layout";
 import StaffPage from "./pages/staff/StaffPage";
-import ProfilePage from "./pages/profile/ProfilePage"; // 1. नवीन कंपोनंट इम्पोर्ट करा
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/clients" element={<ClientPage />} />
           <Route path="/staff" element={<StaffPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
         </Route>
       </Routes>
     </div>

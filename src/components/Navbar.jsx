@@ -9,7 +9,6 @@ import { PiChatsCircle } from "react-icons/pi";
 import { LuAlarmClock, LuMenu } from "react-icons/lu";
 import { SearchOutlined } from "@ant-design/icons";
 import ChatWindow from "./ChatWindow"; // ChatWindow component import केला आहे
-import { Link } from "react-router-dom";
 import { FaRegFolder } from "react-icons/fa"; // Projects
 import { PiUsersLight } from "react-icons/pi"; // Clients
 import { MdOutlineListAlt } from "react-icons/md"; // Tasks
@@ -18,13 +17,12 @@ import { LuNotebook } from "react-icons/lu"; // Notes
 import { LuPhoneCall } from "react-icons/lu"; // Lead
 import { TbReceipt } from "react-icons/tb"; // Expense
 import { BiMessageDetail } from "react-icons/bi"; // Ticket
-
 const profileDetails = {
   name: "Steven",
   image: "https://i.pravatar.cc/40",
 };
 
-const NavBar = ({ toggleSidebar }) => {
+const NavBar = ({ toggleSidebar, onProfileClick }) => {
   const [isBookmarkOpen, setIsBookmarkOpen] = useState(false);
   const [isTimerOpen, setIsTimerOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
@@ -628,16 +626,18 @@ const NavBar = ({ toggleSidebar }) => {
           )}
         </div>
 
-        <Link to="/profile" className="profile-link">
-          <div className="profile">
-            <img
-              src={profileDetails.image || "https://via.placeholder.com/40"}
-              alt="profile"
-              className="profile-img"
-            />
-            <span>{profileDetails.name}</span>
-          </div>
-        </Link>
+        <div
+          className="profile"
+          onClick={onProfileClick}
+          style={{ cursor: "pointer" }}
+        >
+          <img
+            src={profileDetails.image || "https://via.placeholder.com/40"}
+            alt="profile"
+            className="profile-img"
+          />
+          <span>{profileDetails.name}</span>
+        </div>
       </div>
 
       {/* Conditionally render ChatWindow */}
