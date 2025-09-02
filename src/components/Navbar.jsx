@@ -160,7 +160,7 @@ const NavBar = ({ toggleSidebar, onProfileClick }) => {
               <div className="dropdown-header"></div>
               <ul className="bookmark-list">
                 <li>
-                  <a href="/projects">
+                  <a href="/starred-projects">
                     <FaRegFolder className="bookmark-icon" /> Projects
                   </a>
                 </li>

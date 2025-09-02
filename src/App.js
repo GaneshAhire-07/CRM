@@ -5,7 +5,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import ClientPage from "./pages/customers/ClientPage";
 import Layout from "./components/Layout";
 import StaffPage from "./pages/staff/StaffPage";
-
+import StarredProjects from "./components/StarredProjects"; 
 function App() {
   return (
     <div className="App">
@@ -16,6 +16,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/clients" element={<ClientPage />} />
           <Route path="/staff" element={<StaffPage />} />
+           <Route path="/starred-projects" element={<StarredProjects />} /> 
         </Route>
       </Routes>
     </div>
