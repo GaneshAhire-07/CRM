@@ -13,7 +13,7 @@ const Layout = () => {
     <div className="layout">
     <Sidebar isOpen={isSidebarOpen} />
     <div className="layout-body" style={{ marginLeft: isSidebarOpen ? "220px" : "70px" }}>
-      <NavBar toggleSidebar={toggleSidebar} />
+      <NavBar className="navbar" toggleSidebar={toggleSidebar} />
       <main className="layout-content">
         <Outlet /> 
       </main>

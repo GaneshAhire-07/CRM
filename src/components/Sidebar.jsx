@@ -437,6 +437,7 @@ const Sidebar = ({ isOpen }) => {
             <img src={logo_grow} alt="App Logo" />
           </div>
 
+        <div className="sidebar-content">
           <ul className="sidebar-menu">
             {/* Dashboard */}
             <li>
@@ -457,7 +458,7 @@ const Sidebar = ({ isOpen }) => {
               </div>
               <div className={`submenu ${openMenu === "customers" ? "open" : ""}`}>
                 <div className="submenu-item"><Link to="/clients" className="link">Client</Link></div>
-                <div className="submenu-item"><Link to="#client-users" className="link">Client Users</Link></div>
+                <div className="submenu-item"><Link to="/clients-users" className="link">Client Users</Link></div>
               </div>
             </li>
 
@@ -470,7 +471,7 @@ const Sidebar = ({ isOpen }) => {
                 <div className="arrow">{renderArrow("projects")}</div>
               </div>
               <div className={`submenu ${openMenu === "projects" ? "open" : ""}`}>
-                <div className="submenu-item">Projects</div>
+                <div className="submenu-item"><Link to="/projects" className="link">Projects</Link></div>
                 <div className="submenu-item">Templates</div>
               </div>
             </li>
@@ -578,6 +579,7 @@ const Sidebar = ({ isOpen }) => {
               </div>
             </li>
           </ul>
+        </div>
         </div>
       ) : (
         <div className="close_sidebar">

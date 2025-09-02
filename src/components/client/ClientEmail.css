@@ -1,0 +1,124 @@
+/* Overlay background */
+.client-email-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Popup container */
+.client-email-container {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  width: 50%;
+  max-width: 90%;
+  height: auto;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Heading */
+.client-email-container h2 {
+  margin: 0 0 15px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+/* Form fields */
+.client-email-container form div {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.client-email-container label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+.client-email-container input,
+.client-email-container textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.client-email-container input:focus,
+.client-email-container textarea:focus {
+  border-color: #4a90e2;
+}
+
+/* Textarea */
+.client-email-container textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Submit button */
+.client-email-container button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: #4a90e2;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.client-email-container button[type="submit"]:hover {
+  background: #357ab8;
+}
+
+/* Status text */
+.client-email-container p {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+}
+
+/* Close button (top-right) */
+.client-email-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #777;
+}
+
+.client-email-close:hover {
+  color: #333;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

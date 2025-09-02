@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.container button {
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    align-items: center;
+}

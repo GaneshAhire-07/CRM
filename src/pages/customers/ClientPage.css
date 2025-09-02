@@ -34,7 +34,8 @@
   padding: 5px 10px;
   border-radius: 5px;
   width: 180px;
-  height: 35px;
+  height: 40px;
+  border: none !important;
 }
 
 /* .client-container {
@@ -42,10 +43,13 @@
 } */
 
 .search-bar input {
-  border: none;
+  border: none !important;
   outline: none;
   margin-left: 5px;
+  margin-top: 15px;
+  height: 40px;
   background: transparent;
+  padding: 5px 10px;
 }
 
 .client-actions {
@@ -128,11 +132,19 @@ h2 {
   font-weight: 600;
 }
 
+.action-btn.ping.pinned {
+  color: #ff9800; /* orange pin */
+}
+tr td:first-child {
+  font-weight: 500;
+}
+
+
 .status.active {
-  background: #e0f7e9;
-  color: #28a745;
+  background: #e4f5ff;
+  color: #47b8ff;
   padding: 3px 8px;
-  border-radius: 12px;
+  border-radius: 5px;
   font-size: 12px;
   font-weight: 600;
 }

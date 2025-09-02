@@ -1,0 +1,137 @@
+/* Overlay */
+.import-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* transparent dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Modal box */
+.import-modal {
+  background: #fff;
+  width: 50%;
+  max-width: 90%;
+  height: auto;
+  border-radius: 8px;
+  padding: 25px 30px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.import-modal h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+/* File type icons */
+.file-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.file-icon {
+  width: 70px;
+  height: 90px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #fff;
+  font-size: 16px;
+}
+
+.csv { background: #5cc2fd; }
+.xlsx { background: #00c6a9; }
+
+/* Upload Box */
+.upload-box {
+  border: 2px dashed #bbb;
+  border-radius: 6px;
+  padding: 40px 10px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.upload-box:hover {
+  border-color: #5cc2fd;
+}
+
+.upload-label {
+  color: #555;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.upload-label span {
+  font-size: 13px;
+  color: #888;
+}
+
+.file-name {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Sample Links */
+.sample-links {
+  margin: 15px 0;
+  font-size: 13px;
+  color: #777;
+}
+
+.sample-links a {
+  color: #5cc2fd;
+  text-decoration: none;
+}
+
+.sample-links a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.import-btn {
+  background: #00c6a9;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #f5f5f5;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #333;
+}

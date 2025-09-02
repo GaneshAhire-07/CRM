@@ -157,6 +157,13 @@ width: 70px;
   padding-top: 1rem;
 }
 
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 87vh;
+  overflow-y: scroll;
+}
+
 .close_sidebar {
   width: 70px;
   background: #fff;

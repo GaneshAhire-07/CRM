@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./EditClient.css";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
+import { IoCloseSharp } from "react-icons/io5";
 
 const EditClient = ({ client, onClose, onSubmit }) => {
 const [showDescription, setShowDescription] = useState(false);
@@ -20,7 +21,7 @@ const [showDescription, setShowDescription] = useState(false);
         <div className="modal-header">
           <h2>Edit Client</h2>
           <button className="close-btn" onClick={onClose}>
-            ✖
+            <IoCloseSharp />
           </button>
         </div>
 

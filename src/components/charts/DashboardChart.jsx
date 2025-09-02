@@ -103,6 +103,8 @@ const DashboardCharts = () => {
             onChange={(e) => setYear(e.target.value)}
             style={{
               padding: "5px 10px",
+              width: "80px",
+              height: "30px",
               borderRadius: "3px",
               border: "1px solid #e5e5e5",
             }}
@@ -277,18 +279,18 @@ const DashboardCharts = () => {
         <div className="lead-tags">
 
           <div className="pie-legend">
-            <p style={{ background: "#00c6a9" }}>
-              <div>Open : {ticketData[0].value}</div>
-            </p>
-            <p style={{ background: "#ff9800" }}>
-              <div>On Hold : {ticketData[1].value}</div>
-            </p>
-            <p style={{ background: "#2196f3" }}>
-              <div>Answered : {ticketData[2].value}</div>
-            </p>
-            <p style={{ background: "#757575ff" }}>
-              <div>Closed : {ticketData[3].value}</div>
-            </p>
+            <div style={{ background: "#00c6a9" }}>
+              <span>Open : {ticketData[0].value}</span>
+            </div>
+            <div style={{ background: "#ff9800" }}>
+              <span>On Hold : {ticketData[1].value}</span>
+            </div>
+            <div style={{ background: "#2196f3" }}>
+              <span>Answered : {ticketData[2].value}</span>
+            </div>
+            <div style={{ background: "#757575ff" }}>
+              <span>Closed : {ticketData[3].value}</span>
+            </div>
           </div>
         </div>
       </div>
