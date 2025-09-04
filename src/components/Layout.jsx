@@ -28,7 +28,6 @@ const Layout = () => {
         <main className="layout-content">
           <Outlet />
         </main>
-        {/* जर स्टाफ पेज असेल आणि प्रोफाइल कार्ड दिसायला हवे असेल, तरच ते दाखवा */}
         {isProfileCardVisible && location.pathname === '/staff' && (
           <ProfilePage onClose={toggleProfileCard} />
         )}

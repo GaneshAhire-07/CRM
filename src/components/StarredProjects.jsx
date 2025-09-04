@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Search,
   Star,
@@ -10,13 +10,32 @@ import {
   StickyNote,
 } from "lucide-react";
 import "./StarredProjects.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function StarredProjects() {
   const [sortBy, setSortBy] = useState("Project Title");
-  const [activeTab, setActiveTab] = useState("projects");
   const navigate = useNavigate();
-  // 👉 Mapping for tab → icon + label
+  const location = useLocation();
+
+  // Get initial tab from URL query parameter
+  const queryParams = new URLSearchParams(location.search);
+  const initialTab = queryParams.get("tab") || "projects";
+  const [activeTab, setActiveTab] = useState(initialTab);
+
+  // Update tab when URL changes
+  useEffect(() => {
+    const tabFromQuery = new URLSearchParams(location.search).get("tab");
+    if (tabFromQuery && tabFromQuery !== activeTab) {
+      setActiveTab(tabFromQuery);
+    }
+  }, [location.search, activeTab]);
+
+  // Handler to update URL and state when a tab is clicked
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+    navigate(`/starred-projects?tab=${tab}`);
+  };
+
   const tabConfig = {
     clients: {
       icon: <Users className="h-5 w-5 text-sky-600" />,
@@ -65,7 +84,7 @@ export default function StarredProjects() {
               className={`nav-link text-white ${
                 activeTab === tab ? "active" : ""
               }`}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => handleTabClick(tab)}
             >
               {tabConfig[tab].label}
             </span>
@@ -77,7 +96,6 @@ export default function StarredProjects() {
       <div className="content">
         <div className="projects-header">
           <div className="projects-left">
-            {/* 👉 Auto-updated Tab Title with Icon + Space */}
             <span className="projects-title flex items-center gap-3">
               {tabConfig[activeTab].icon}
               {tabConfig[activeTab].label}

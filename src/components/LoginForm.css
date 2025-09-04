@@ -164,6 +164,7 @@
   transition: opacity 0.4s ease;
 }
 
+
 .logo-circle:hover::before {
   opacity: 1;
   animation: rotate 3s linear infinite;
@@ -192,7 +193,7 @@
   transform: scale(1.05);
 }
 
-/* Login Title and Subtitle */
+/* Login Title and Subtitle */  
 .login-title {
   margin-bottom: clamp(0.75rem, 2vw, 1.5rem);
   color: black;
