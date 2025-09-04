@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { TfiTimer } from "react-icons/tfi";
 import { GrAddCircle } from "react-icons/gr";
 import { FaRegStar } from "react-icons/fa6";
-import { IoNotificationsOutline, IoClose } from "react-icons/io5";
+import { IoNotificationsOutline } from "react-icons/io5";
 import { MdOutlineCalendarToday } from "react-icons/md";
 import { PiChatsCircle } from "react-icons/pi";
 import { LuAlarmClock, LuMenu } from "react-icons/lu";
@@ -210,7 +210,7 @@ const NavBar = ({ toggleSidebar, onProfileClick }) => {
                   className="close-btn"
                   onClick={() => setIsTimerOpen(false)}
                 >
-                  <IoClose />
+                  Close
                 </button>
               </div>
 
@@ -332,7 +332,7 @@ const NavBar = ({ toggleSidebar, onProfileClick }) => {
                   className="close-btn"
                   onClick={() => setIsNotificationOpen(false)}
                 >
-                  <IoClose />
+                  Close
                 </button>
               </div>
 
@@ -447,7 +447,7 @@ const NavBar = ({ toggleSidebar, onProfileClick }) => {
                   className="close-btn-simple"
                   onClick={() => setIsTimeTrackerOpen(false)}
                 >
-                  <IoClose />
+                  Close
                 </button>
               </div>
 
@@ -505,6 +505,7 @@ const NavBar = ({ toggleSidebar, onProfileClick }) => {
                 <div className="form-actions">
                   <button
                     className="btn-close"
+                    style={{ marginRight: "35px" }}
                     onClick={() => setIsTimeTrackerOpen(false)}
                   >
                     Close

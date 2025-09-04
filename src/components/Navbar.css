@@ -961,7 +961,7 @@
 
 .btn-close {
   padding: 10px 20px;
-  background: none;
+  background: #4d92a9;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
   color: #718096;
@@ -1377,39 +1377,6 @@
   justify-content: flex-end;
   gap: 12px;
   margin-top: 24px;
-}
-
-.btn-close {
-  padding: 10px 20px;
-  background: none;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  color: #718096;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-
-.btn-close:hover {
-  background: #f7fafc;
-  color: #2d3748;
-}
-
-.btn-submit {
-  padding: 10px 20px;
-  background: #f56565;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  transition: background-color 0.2s;
-}
-
-.btn-submit:hover {
-  background: #e53e3e;
 }
 
 .calendar-container {
