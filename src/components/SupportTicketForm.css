@@ -1,0 +1,412 @@
+/* Simple Ticket Form Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f6fa;
+  color: #2c3e50;
+}
+
+.ticket-form-container {
+  padding: 20px;
+  min-height: 100vh;
+  position: relative;
+}
+
+.form-layout {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 300px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  height: fit-content;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.field-label {
+  display: block;
+  font-size: 13px;
+  color: #7f8c8d;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.form-select {
+  width: 100%;
+  padding: 10px 35px 10px 12px;
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+  background: #ffffff;
+  font-size: 14px;
+  color: #2c3e50;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-select.disabled {
+  background: #f8f9fa;
+  color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #95a5a6;
+  pointer-events: none;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+  background: #ffffff;
+  font-size: 14px;
+  color: #2c3e50;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 120px;
+  transition: all 0.2s ease;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+  background: #ffffff;
+  font-size: 14px;
+  color: #2c3e50;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Editor Toolbar */
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e1e8ed;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.toolbar-section {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding-right: 12px;
+  border-right: 1px solid #e1e8ed;
+}
+
+.toolbar-section:last-child {
+  border-right: none;
+}
+
+.toolbar-btn {
+  padding: 6px 8px;
+  border: none;
+  background: transparent;
+  color: #7f8c8d;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolbar-btn:hover {
+  background: #e9ecef;
+  color: #495057;
+}
+
+/* Editor Area */
+.editor-area {
+  padding: 0;
+}
+
+.editor-textarea {
+  width: 100%;
+  min-height: 300px;
+  padding: 16px;
+  border: none;
+  background: #ffffff;
+  font-size: 14px;
+  color: #2c3e50;
+  font-family: inherit;
+  resize: none;
+  line-height: 1.6;
+}
+
+.editor-textarea:focus {
+  outline: none;
+}
+
+/* Canned Messages */
+.canned-messages {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-top: 1px solid #e1e8ed;
+  border-bottom: 1px solid #e1e8ed;
+  color: #7f8c8d;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.canned-messages:hover {
+  background: #e9ecef;
+}
+
+.message-icon {
+  color: #95a5a6;
+}
+
+/* File Upload Area */
+.upload-area {
+  margin: 20px 16px;
+  border: 2px dashed #ddd;
+  border-radius: 6px;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #fafbfc;
+}
+
+.upload-area:hover,
+.upload-area.dragover {
+  border-color: #3498db;
+  background: #f0f8ff;
+}
+
+.upload-icon {
+  color: #bdc3c7;
+  margin-bottom: 12px;
+}
+
+.upload-area p {
+  margin: 0;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+/* File List */
+.file-list {
+  padding: 0 16px 16px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: #f8f9fa;
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.file-name {
+  color: #2c3e50;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: #fee;
+}
+
+/* Tags and Submit Section */
+.main-content .form-field {
+  padding: 0 16px;
+  margin-bottom: 20px;
+}
+
+.submit-section {
+  padding: 20px 16px;
+  text-align: right;
+  border-top: 1px solid #e1e8ed;
+  background: #fafbfc;
+}
+
+.submit-button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(231, 76, 60, 0.2);
+}
+
+.submit-button:hover {
+  background: #c0392b;
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+/* Floating Icons */
+.floating-icons {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.float-btn {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.grid-btn {
+  background: #ffffff;
+  color: #7f8c8d;
+}
+
+.help-btn {
+  background: #3498db;
+  color: white;
+}
+
+.float-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.grid-btn:hover {
+  background: #f8f9fa;
+  color: #495057;
+}
+
+.help-btn:hover {
+  background: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-layout {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .sidebar {
+    width: 100%;
+  }
+  
+  .toolbar-section {
+    padding-right: 8px;
+    border-right: none;
+  }
+  
+  .floating-icons {
+    right: 15px;
+    bottom: 15px;
+  }
+  
+  .float-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ticket-form-container {
+    padding: 10px;
+  }
+  
+  .sidebar,
+  .main-content {
+    border-radius: 6px;
+  }
+  
+  .editor-toolbar {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  
+  .toolbar-btn {
+    padding: 5px 6px;
+  }
+  
+  .upload-area {
+    margin: 15px 12px;
+    padding: 30px 15px;
+  }
+}

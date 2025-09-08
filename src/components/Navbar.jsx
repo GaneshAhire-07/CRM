@@ -20,6 +20,8 @@ import { BiMessageDetail } from "react-icons/bi"; // Ticket
 import { Link } from "react-router-dom";
 import AddTaskForm from "./AddTaskForm";
 import AddLeadForm from "./AddLeadForm";
+import AddExpenseForm from "./AddExpenseForm";
+import SupportTicketForm from "./SupportTicketForm"
 const profileDetails = {
   name: "Steven",
   image: "https://i.pravatar.cc/40",
@@ -39,6 +41,9 @@ const NavBar = ({ toggleSidebar, onProfileClick }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [calendarView, setCalendarView] = useState("Month");
   const [isAddLeadFormOpen, setIsAddLeadFormOpen] = useState(false);
+  const [isAddExpenseForm, setIsAddExpenseForm] = useState(false);
+  const [isSupportTicketForm, setIsSuppoortTicketForm] = useState(false);
+
   const monthNames = [
     "JANUARY",
     "FEBRUARY",
@@ -133,9 +138,15 @@ const NavBar = ({ toggleSidebar, onProfileClick }) => {
     console.log("Submitted task:", task);
     setIsAddTaskFormOpen(false);
   };
+
   const handleLeadSubmit = (leadData) => {
     console.log("New Lead Submitted:", leadData);
-    // Logic to handle the new lead data
+    setIsAddLeadFormOpen(false);
+  };
+
+  const handleExpenseSubmit = (expenseData) => {
+    console.log("New Expense Submitted:", expenseData);
+    setIsAddExpenseForm(false);
   };
 
   return (
@@ -653,9 +664,15 @@ const NavBar = ({ toggleSidebar, onProfileClick }) => {
                     </button>
                   </li>
                   <li>
-                    <a href="/expense">
+                    <button
+                      className="add-menu-button"
+                      onClick={() => {
+                        setIsAddExpenseForm(true);
+                        setIsAddMenuOpen(false);
+                      }}
+                    >
                       <TbReceipt className="bookmark-icon" /> Expense
-                    </a>
+                    </button>
                   </li>
                   <li>
                     <a href="/ticket">
@@ -698,12 +715,16 @@ const NavBar = ({ toggleSidebar, onProfileClick }) => {
         />
       )}
 
-      {/* Conditionally render ChatWindow */}
-      {isChatOpen && (
-        <ChatWindow
-          onClose={() => setIsChatOpen(false)}
+      {/* Conditionally render AddExpenseForm */}
+      {isAddExpenseForm && (
+        <AddExpenseForm
+          onClose={() => setIsAddExpenseForm(false)}
+          onSubmit={handleExpenseSubmit}
         />
       )}
+
+      {/* Conditionally render ChatWindow */}
+      {isChatOpen && <ChatWindow onClose={() => setIsChatOpen(false)} />}
     </>
   );
 };
