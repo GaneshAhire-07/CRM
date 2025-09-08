@@ -6,7 +6,7 @@ import ClientPage from "./pages/customers/ClientPage";
 import Layout from "./components/Layout";
 import StaffPage from "./pages/staff/StaffPage";
 import StarredProjects from "./components/StarredProjects";
-
+import CreateTicketPage from "./pages/tickets/CreateTicketPage";
 function App() {
   return (
     <div className="App">
@@ -20,6 +20,10 @@ function App() {
           <Route path="/clients" element={<ClientPage />} />
           <Route path="/staff" element={<StaffPage />} />
           <Route path="/starred-projects" element={<StarredProjects />} />
+          <Route
+            path="/staff/tickets/create" // <-- इथे सुरुवातीला असलेला / ही चूक आहे
+            element={<CreateTicketPage />}
+          />
         </Route>
       </Routes>
     </div>
