@@ -1,61 +1,67 @@
 import React from "react";
-import "./Sidebar.css"; // We can reuse the same CSS
+import "./Sidebar.css";
 import logo_grow from "../Assets/Logo/logo.png";
+import logo from "../Assets/Logo/apple-touch-icon-60x60.png";
 import {
-  AiOutlineHome,
-  AiOutlineCreditCard,
-  AiOutlineFileText,
-  AiOutlineUser,
-  AiOutlineQuestionCircle,
-} from "react-icons/ai";
-import { TfiFolder } from "react-icons/tfi";
+  Home,
+  CreditCard,
+  FileSignature,
+  FileCheck,
+  User,
+  LifeBuoy,
+  Folder,
+  BookOpen,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ClientSidebar = ({ isOpen }) => {
   return (
-    <div className={`sidebar ${isOpen ? "" : "close_sidebar"}`}>
+    <div
+      style={{ height: "100%", width: "218px" }}
+      className={isOpen ? "sidebar" : "close_sidebar"}
+    >
       <div className="sidebar-logo">
-        <img src={isOpen ? logo_grow : ""} alt="App Logo" />
+        <img src={isOpen ? logo_grow : logo} alt="App Logo" />
       </div>
       <ul className="sidebar-menu">
         <li>
-          <Link to="/" className="link menu-item">
-            <AiOutlineHome size={22} /> {isOpen && "Dashboard"}
+          <Link to="/clients" className="link menu-item">
+            <Home size={22} /> {isOpen && "Dashboard"}
           </Link>
         </li>
         <li>
           <Link to="/clients" className="link menu-item">
-            <TfiFolder size={22} /> {isOpen && "Projects"}
+            <Folder size={22} /> {isOpen && "Projects"}
           </Link>
         </li>
         <li>
           <div className="menu-item">
-            <AiOutlineCreditCard size={22} /> {isOpen && "Billing"}
+            <CreditCard size={22} /> {isOpen && "Billing"}
           </div>
         </li>
         <li>
           <div className="menu-item">
-            <AiOutlineFileText size={22} /> {isOpen && "Proposals"}
+            <FileSignature size={22} /> {isOpen && "Proposals"}
           </div>
         </li>
         <li>
           <div className="menu-item">
-            <AiOutlineFileText size={22} /> {isOpen && "Contracts"}
+            <FileCheck size={22} /> {isOpen && "Contracts"}
           </div>
         </li>
         <li>
           <div className="menu-item">
-            <AiOutlineUser size={22} /> {isOpen && "Users"}
+            <User size={22} /> {isOpen && "Users"}
           </div>
         </li>
         <li>
           <div className="menu-item">
-            <AiOutlineQuestionCircle size={22} /> {isOpen && "Support"}
+            <LifeBuoy size={22} /> {isOpen && "Support"}
           </div>
         </li>
         <li>
           <div className="menu-item">
-            <AiOutlineQuestionCircle size={22} /> {isOpen && "Knowledgebase"}
+            <BookOpen size={22} /> {isOpen && "Knowledgebase"}
           </div>
         </li>
       </ul>

@@ -24,8 +24,8 @@ const ClientPage = () => {
     <div className="client">
       <div className="client-container">
       <div className="client-header">
-        <h1 className="page-title">Clients</h1>
-      <p className="breadcrumb">APP &gt; CLIENTS</p>
+        {/* <h1 className="page-title">Clients</h1> */}
+      {/* <p className="breadcrumb">APP &gt; CLIENTS</p> */}
       </div>
 
       <div className="client-actions">
