@@ -1,8 +1,10 @@
 import { Outlet, useLocation } from "react-router-dom";
 import NavBar from "./Navbar";
 import Sidebar from "./Sidebar";
+import ClientSidebar from "./ClientSidebar"; // नवीन फाइल इम्पोर्ट करा
+import ClientNavbar from "./ClientNavbar"; // नवीन फाइल इम्पोर्ट करा
 import { useState } from "react";
-import ProfilePage from "../pages/profile/ProfilePage"; // ProfilePage येथे इम्पोर्ट करा
+import ProfilePage from "../pages/profile/ProfilePage";
 
 const Layout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -14,26 +16,46 @@ const Layout = () => {
   };
 
   const toggleProfileCard = () => {
-    // फक्त स्टाफ पेजवर असतानाच प्रोफाइल कार्ड टॉगल करा
-    if (location.pathname === '/staff') {
-      setProfileCardVisible(prev => !prev);
+    if (location.pathname === "/staff" || location.pathname === "/clients") {
+      setProfileCardVisible((prev) => !prev);
     }
   };
 
+  // कोणत्या पेजवर कोणता साइडबार आणि नॅव्हबार दाखवायचा हे ठरवा
+  const isClientsPage = location.pathname === "/clients";
+
   return (
     <div className="layout">
-      <Sidebar isOpen={isSidebarOpen} />
-      <div className="layout-body" style={{ marginLeft: isSidebarOpen ? "220px" : "70px", position: 'relative' }}>
-        <NavBar toggleSidebar={toggleSidebar} onProfileClick={toggleProfileCard} />
+      {isClientsPage ? (
+        <ClientSidebar isOpen={isSidebarOpen} />
+      ) : (
+        <Sidebar isOpen={isSidebarOpen} />
+      )}
+      <div
+        className="layout-body"
+        style={{
+          marginLeft: isSidebarOpen ? "220px" : "70px",
+          position: "relative",
+        }}
+      >
+        {isClientsPage ? (
+          <ClientNavbar
+            toggleSidebar={toggleSidebar}
+            onProfileClick={toggleProfileCard}
+          />
+        ) : (
+          <NavBar
+            toggleSidebar={toggleSidebar}
+            onProfileClick={toggleProfileCard}
+          />
+        )}
         <main className="layout-content">
           <Outlet />
         </main>
-        {isProfileCardVisible && location.pathname === '/staff' && (
-          <ProfilePage onClose={toggleProfileCard} />
-        )}
+        {isProfileCardVisible && <ProfilePage onClose={toggleProfileCard} />}
       </div>
     </div>
   );
-}
+};
 
 export default Layout;
