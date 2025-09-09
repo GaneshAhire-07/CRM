@@ -13,17 +13,12 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignUpForm />} />
-
-        {/* Layout routes */}
         <Route element={<Layout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/clients" element={<ClientPage />} />
           <Route path="/staff" element={<StaffPage />} />
           <Route path="/starred-projects" element={<StarredProjects />} />
-          <Route
-            path="/staff/tickets/create" // <-- इथे सुरुवातीला असलेला / ही चूक आहे
-            element={<CreateTicketPage />}
-          />
+          <Route path="/staff/tickets/create"  element={<CreateTicketPage />}/>
         </Route>
       </Routes>
     </div>

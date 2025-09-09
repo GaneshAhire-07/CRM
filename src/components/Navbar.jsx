@@ -17,17 +17,18 @@ import { LuNotebook } from "react-icons/lu"; // Notes
 import { LuPhoneCall } from "react-icons/lu"; // Lead
 import { TbReceipt } from "react-icons/tb"; // Expense
 import { BiMessageDetail } from "react-icons/bi"; // Ticket
-import { Link } from "react-router-dom";
 import AddTaskForm from "./AddTaskForm";
 import AddLeadForm from "./AddLeadForm";
 import AddExpenseForm from "./AddExpenseForm";
-import SupportTicketForm from "./SupportTicketForm"
+import { Link, useNavigate } from "react-router-dom";  // useNavigate import कर
+
 const profileDetails = {
   name: "Steven",
   image: "https://i.pravatar.cc/40",
 };
 
 const NavBar = ({ toggleSidebar, onProfileClick }) => {
+  const navigate = useNavigate(); 
   const [isBookmarkOpen, setIsBookmarkOpen] = useState(false);
   const [isTimerOpen, setIsTimerOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
@@ -42,7 +43,6 @@ const NavBar = ({ toggleSidebar, onProfileClick }) => {
   const [calendarView, setCalendarView] = useState("Month");
   const [isAddLeadFormOpen, setIsAddLeadFormOpen] = useState(false);
   const [isAddExpenseForm, setIsAddExpenseForm] = useState(false);
-  const [isSupportTicketForm, setIsSuppoortTicketForm] = useState(false);
 
   const monthNames = [
     "JANUARY",
@@ -675,9 +675,15 @@ const NavBar = ({ toggleSidebar, onProfileClick }) => {
                     </button>
                   </li>
                   <li>
-                    <a href="/ticket">
+                    <button
+                      className="add-menu-button"
+                      onClick={() => {
+                        setIsAddMenuOpen(false);
+                        navigate("/staff/tickets/create");
+                      }}
+                    >
                       <BiMessageDetail className="bookmark-icon" /> Ticket
-                    </a>
+                    </button>
                   </li>
                 </ul>
               </div>
